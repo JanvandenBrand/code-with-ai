@@ -153,6 +153,14 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "numpy"
+version = "2.1.2"
+description = "Fundamental package for array computing in Python"
+category = "main"
+optional = false
+python-versions = ">=3.10"
+
+[[package]]
 name = "packaging"
 version = "24.1"
 description = "Core utilities for Python packages"
@@ -316,7 +324,7 @@ python-versions = ">=3.8"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "67d6d97695fc8174539f96df2b7228a1bac9a5cb35a3f558e256720dc1931833"
+content-hash = "3976f2f557622649dec955dd2875346295197153dac5c57dae157280e5bd9983"
 
 [metadata.files]
 bandit = []
@@ -331,6 +339,7 @@ markdown-it-py = []
 mccabe = []
 mdurl = []
 mypy-extensions = []
+numpy = []
 packaging = []
 pathspec = []
 pbr = []
