@@ -1,4 +1,23 @@
 [[package]]
+name = "alabaster"
+version = "1.0.0"
+description = "A light, configurable Sphinx theme"
+category = "dev"
+optional = false
+python-versions = ">=3.10"
+
+[[package]]
+name = "babel"
+version = "2.16.0"
+description = "Internationalization utilities"
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+dev = ["pytest (>=6.0)", "pytest-cov", "freezegun (>=1.0,<2.0)"]
+
+[[package]]
 name = "bandit"
 version = "1.7.10"
 description = "Security oriented static analyser for python code."
@@ -43,10 +62,34 @@ jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
+name = "blinker"
+version = "1.8.2"
+description = "Fast, simple object-to-object and broadcast signaling"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "certifi"
+version = "2024.8.30"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "charset-normalizer"
+version = "3.4.0"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "dev"
+optional = false
+python-versions = ">=3.7.0"
+
+[[package]]
 name = "click"
 version = "8.1.7"
 description = "Composable command line interface toolkit"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -57,23 +100,31 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
 name = "coverage"
-version = "7.6.1"
+version = "7.6.7"
 description = "Code coverage measurement for Python"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 
 [package.dependencies]
 tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.11.0a6\" and extra == \"toml\""}
 
 [package.extras]
 toml = ["tomli"]
+
+[[package]]
+name = "docutils"
+version = "0.21.2"
+description = "Docutils -- Python Documentation Utilities"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
 
 [[package]]
 name = "exceptiongroup"
@@ -100,12 +151,72 @@ pycodestyle = ">=2.12.0,<2.13.0"
 pyflakes = ">=3.2.0,<3.3.0"
 
 [[package]]
+name = "flask"
+version = "3.0.3"
+description = "A simple framework for building complex web applications."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+blinker = ">=1.6.2"
+click = ">=8.1.3"
+itsdangerous = ">=2.1.2"
+Jinja2 = ">=3.1.2"
+Werkzeug = ">=3.0.0"
+
+[package.extras]
+async = ["asgiref (>=3.2)"]
+dotenv = ["python-dotenv"]
+
+[[package]]
+name = "idna"
+version = "3.10"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+all = ["ruff (>=0.6.2)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "flake8 (>=7.1.1)"]
+
+[[package]]
+name = "imagesize"
+version = "1.4.1"
+description = "Getting image size from png/jpeg/jpeg2000/gif file"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "itsdangerous"
+version = "2.2.0"
+description = "Safely pass data to untrusted environments and back."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "jinja2"
+version = "3.1.4"
+description = "A very fast and expressive template engine."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+MarkupSafe = ">=2.0"
+
+[package.extras]
+i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "markdown-it-py"
@@ -127,6 +238,14 @@ plugins = ["mdit-py-plugins"]
 profiling = ["gprof2dot"]
 rtd = ["mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx-book-theme", "jupyter-sphinx"]
 testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
+
+[[package]]
+name = "markupsafe"
+version = "3.0.2"
+description = "Safely add untrusted strings to HTML/XML markup."
+category = "main"
+optional = false
+python-versions = ">=3.9"
 
 [[package]]
 name = "mccabe"
@@ -279,6 +398,24 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "requests"
+version = "2.32.3"
+description = "Python HTTP for Humans."
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<4"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<3"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
 name = "rich"
 version = "13.9.2"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
@@ -293,6 +430,122 @@ typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.1
 
 [package.extras]
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
+
+[[package]]
+name = "snowballstemmer"
+version = "2.2.0"
+description = "This package provides 29 stemmers for 28 languages generated from Snowball algorithms."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "sphinx"
+version = "8.1.3"
+description = "Python documentation generator"
+category = "dev"
+optional = false
+python-versions = ">=3.10"
+
+[package.dependencies]
+alabaster = ">=0.7.14"
+babel = ">=2.13"
+colorama = {version = ">=0.4.6", markers = "sys_platform == \"win32\""}
+docutils = ">=0.20,<0.22"
+imagesize = ">=1.3"
+Jinja2 = ">=3.1"
+packaging = ">=23.0"
+Pygments = ">=2.17"
+requests = ">=2.30.0"
+snowballstemmer = ">=2.2"
+sphinxcontrib-applehelp = ">=1.0.7"
+sphinxcontrib-devhelp = ">=1.0.6"
+sphinxcontrib-htmlhelp = ">=2.0.6"
+sphinxcontrib-jsmath = ">=1.0.1"
+sphinxcontrib-qthelp = ">=1.0.6"
+sphinxcontrib-serializinghtml = ">=1.1.9"
+tomli = {version = ">=2", markers = "python_version < \"3.11\""}
+
+[package.extras]
+docs = ["sphinxcontrib-websupport"]
+lint = ["flake8 (>=6.0)", "ruff (==0.6.9)", "mypy (==1.11.1)", "sphinx-lint (>=0.9)", "types-colorama (==0.4.15.20240311)", "types-defusedxml (==0.7.0.20240218)", "types-docutils (==0.21.0.20241005)", "types-Pillow (==10.2.0.20240822)", "types-Pygments (==2.18.0.20240506)", "types-requests (==2.32.0.20240914)", "types-urllib3 (==1.26.25.14)", "tomli (>=2)", "pyright (==1.1.384)", "pytest (>=6.0)"]
+test = ["pytest (>=8.0)", "defusedxml (>=0.7.1)", "cython (>=3.0)", "setuptools (>=70.0)", "typing_extensions (>=4.9)"]
+
+[[package]]
+name = "sphinxcontrib-applehelp"
+version = "2.0.0"
+description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-devhelp"
+version = "2.0.0"
+description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp documents"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-htmlhelp"
+version = "2.1.0"
+description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest", "html5lib"]
+
+[[package]]
+name = "sphinxcontrib-jsmath"
+version = "1.0.1"
+description = "A sphinx extension which renders display math in HTML via JavaScript"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest", "flake8", "mypy"]
+
+[[package]]
+name = "sphinxcontrib-qthelp"
+version = "2.0.0"
+description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp documents"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest", "defusedxml (>=0.7.1)"]
+
+[[package]]
+name = "sphinxcontrib-serializinghtml"
+version = "2.0.0"
+description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)"
+category = "dev"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
 
 [[package]]
 name = "stevedore"
@@ -321,21 +574,61 @@ category = "dev"
 optional = false
 python-versions = ">=3.8"
 
+[[package]]
+name = "urllib3"
+version = "2.2.3"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+h2 = ["h2 (>=4,<5)"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
+
+[[package]]
+name = "werkzeug"
+version = "3.0.6"
+description = "The comprehensive WSGI web application library."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+MarkupSafe = ">=2.1.1"
+
+[package.extras]
+watchdog = ["watchdog (>=2.3)"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "3976f2f557622649dec955dd2875346295197153dac5c57dae157280e5bd9983"
+content-hash = "9497147baf229f43db2a0c6df0c6de47d52122392ad6aaae2c9e39dae722cf8b"
 
 [metadata.files]
+alabaster = []
+babel = []
 bandit = []
 black = []
+blinker = []
+certifi = []
+charset-normalizer = []
 click = []
 colorama = []
 coverage = []
+docutils = []
 exceptiongroup = []
 flake8 = []
+flask = []
+idna = []
+imagesize = []
 iniconfig = []
+itsdangerous = []
+jinja2 = []
 markdown-it-py = []
+markupsafe = []
 mccabe = []
 mdurl = []
 mypy-extensions = []
@@ -351,7 +644,18 @@ pygments = []
 pytest = []
 pytest-cov = []
 pyyaml = []
+requests = []
 rich = []
+snowballstemmer = []
+sphinx = []
+sphinxcontrib-applehelp = []
+sphinxcontrib-devhelp = []
+sphinxcontrib-htmlhelp = []
+sphinxcontrib-jsmath = []
+sphinxcontrib-qthelp = []
+sphinxcontrib-serializinghtml = []
 stevedore = []
 tomli = []
 typing-extensions = []
+urllib3 = []
+werkzeug = []
