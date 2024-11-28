@@ -9,6 +9,8 @@ license = "EUPLv1.2"
 python = "^3.10"
 numpy = "^2.1.2"
 Flask = "^3.0.3"
+SQLAlchemy = "^2.0.36"
+passlib = "^1.7.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.3.3"
