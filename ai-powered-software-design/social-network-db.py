@@ -165,8 +165,6 @@ def get_persons_who_consider_them_friend(session, person_name):
         return []
     
     # Query the Person table to find all persons who have the specified person in their friends list
-    persons_who_consider_them_friend = session.query(Person).filter(Person.friends.contains(person)).all()
+    persons_who_consider_them_friend = session.query(Person).filter(Person.friends.any(id=person.id)).all()
     
     return persons_who_consider_them_friend
-
-    
